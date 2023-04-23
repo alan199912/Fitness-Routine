@@ -1,0 +1,88 @@
+<section class="p-4 pt-0">
+  <h1 class="text-4xl">Add a new excercise</h1>
+
+  <form
+    [formGroup]="trainingRoutineForm"
+    (ngSubmit)="setRoutine()"
+    class="mt-5 border p-5 rounded-lg shadow-lg grid grid-cols-3 gap-5"
+  >
+    <div class="mb-6">
+      <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
+      <select
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        name="name"
+        id="name"
+        formControlName="name"
+      >
+        <option selected value="">Select an excercise</option>
+        <option value="Biceps Curl">Biceps Curl</option>
+        <option value="Triceps Curl">Triceps Curl</option>
+        <option value="Squats">Squats</option>
+        <option value="Deadlift">Deadlift</option>
+      </select>
+    </div>
+    <div class="mb-6">
+      <label for="series" class="block mb-2 text-sm font-medium text-gray-900">Series</label>
+      <input
+        type="text"
+        id="series"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ex. 3"
+        formControlName="series"
+        required
+      />
+    </div>
+    <div class="mb-6">
+      <label for="repetitions" class="block mb-2 text-sm font-medium text-gray-900">Repetitions</label>
+      <input
+        type="text"
+        id="repetitions"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ex. 3"
+        formControlName="repetitions"
+        required
+      />
+    </div>
+    <div class="mb-6">
+      <label for="time" class="block mb-2 text-sm font-medium text-gray-900">Time</label>
+      <input
+        type="text"
+        id="time"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ex. 3"
+        formControlName="time"
+        required
+      />
+    </div>
+    <div class="mb-6">
+      <label for="rest" class="block mb-2 text-sm font-medium text-gray-900">Rest</label>
+      <input
+        type="text"
+        id="rest"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ex. 1:00"
+        formControlName="rest"
+        required
+      />
+    </div>
+    <div class="mb-6">
+      <label for="weight" class="block mb-2 text-sm font-medium text-gray-900">Weight</label>
+      <input
+        type="text"
+        id="weight"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        placeholder="Ex. 12"
+        formControlName="weight"
+        required
+      />
+    </div>
+    <div>
+      <button
+        type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</section>

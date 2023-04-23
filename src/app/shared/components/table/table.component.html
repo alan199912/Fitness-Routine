@@ -1,0 +1,375 @@
+<div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+  <table class="min-w-full divide-y divide-gray-200 rounded-sm border">
+    <thead class="bg-gray-50">
+      <tr>
+        <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Day
+        </th>
+        <th
+          scope="col"
+          colspan="2"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Muscle group
+        </th>
+        <!-- <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Series
+        </th>
+        <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Time
+        </th>
+        <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Rest
+        </th>
+        <th
+          scope="col"
+          class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        >
+          Weight
+        </th>
+        <th
+        scope="col"
+        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        ></th>
+      --></tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <tr>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">Monday</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">Biceps, Legs, shoulders</div>
+            </div>
+          </div>
+        </td>
+        <!-- <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">Bench Press,</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">5</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">12</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">1:00</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <span
+            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800"
+          >
+            100
+          </span>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="text-sm font-medium text-gray-900 w-20">
+              <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-auto w-50"
+              >
+                Edit
+              </button>
+            </div>
+            <div class="text-sm font-medium text-gray-900 w-20">
+              <button
+                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full mx-auto w-50"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </td> -->
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex justify-center items-center">
+            <div class="text-sm font-medium text-gray-900 w-20">
+              <a
+                [routerLink]="['/training-routines/1515']"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-auto w-50"
+              >
+                Show more
+              </a>
+            </div>
+            <!-- <div class="text-sm font-medium text-gray-900 w-20">
+              <button
+                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full mx-auto w-50"
+              >
+                Delete
+              </button>
+            </div> -->
+          </div>
+        </td>
+      </tr>
+      <!-- <tr>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">Tuesday</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">Bench Press</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">5</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">10</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">1:00</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <span
+            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800"
+          >
+            100
+          </span>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="text-sm font-medium text-gray-900 w-20">
+              <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-auto w-50"
+              >
+                Edit
+              </button>
+            </div>
+            <div class="text-sm font-medium text-gray-900 w-20">
+              <button
+                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full mx-auto w-50"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">Thursday</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">Bench Press</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">5</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">10</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="">
+              <div class="text-sm font-medium text-gray-900">1:00</div>
+            </div>
+          </div>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <span
+            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800"
+          >
+            100
+          </span>
+        </td>
+        <td class="px-6 py-4 whitespace-nowrap">
+          <div class="flex items-center">
+            <div class="text-sm font-medium text-gray-900 w-20">
+              <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-auto w-50"
+              >
+                Edit
+              </button>
+            </div>
+            <div class="text-sm font-medium text-gray-900 w-20">
+              <button
+                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full mx-auto w-50"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
+<!-- <div class="w-full flex justify-center">
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mx-auto w-50">
+    +
+  </button>
+</div> -->
+
+<!-- <tr>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="flex items-center">
+      <div class="ml-0">
+        <div class="relative inline-block w-[100%] text-gray-700">
+          <select
+            class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline"
+            placeholder="Regular input"
+          >
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+          </select>
+          <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+            <svg
+              class="w-4 h-4 fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M7.293 7.293a1 1 0 0 1 1.414 0L12 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="flex items-center">
+      <div class="ml-0">
+        <div class="relative inline-block w-[100%] text-gray-700">
+          <input
+            type="text"
+            class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline"
+            placeholder="Regular input"
+          />
+        </div>
+      </div>
+    </div>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="flex items-center">
+      <div class="ml-0">
+        <div class="relative inline-block w-[100%] text-gray-700">
+          <input
+            type="number"
+            class="w-full h-10 pl-3 pr-3 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline"
+            placeholder="Regular input"
+          />
+        </div>
+      </div>
+    </div>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="flex items-center">
+      <div class="ml-0">
+        <div class="relative inline-block w-[100%] text-gray-700">
+          <input
+            type="number"
+            class="w-full h-10 pl-3 pr-3 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline"
+            placeholder="Regular input"
+          />
+        </div>
+      </div>
+    </div>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="flex items-center">
+      <div class="">
+        <div class="relative inline-block w-[100%] text-gray-700">
+          <input
+            type="time"
+            class="w-full h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline"
+            placeholder="Regular input"
+          />
+        </div>
+      </div>
+    </div>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="relative inline-block w-[100%] text-gray-700">
+      <input
+        type="number"
+        class="w-full h-10 pl-3 pr-3 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline"
+        placeholder="Regular input"
+      />
+    </div>
+  </td>
+  <td class="px-6 py-4 whitespace-nowrap">
+    <div class="flex items-center">
+      <div class="ml-0">
+        <div class="relative inline-block w-[100%] text-gray-700">
+          <textarea
+            class="w-full h-10 pl-3 pr-3 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline"
+            placeholder="Regular input"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr> -->

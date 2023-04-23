@@ -1,0 +1,12 @@
+<button
+  class="flex w-full px-6 py-2.5 bg-slate-200 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:text-white hover:shadow-lg focus:bg-blue-700 focus:text-white focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:text-white active:shadow-lg transition duration-150 ease-in-out mb-4"
+  type="button"
+  data-bs-toggle="collapse"
+  data-bs-target="#collapseExample"
+  aria-expanded="false"
+  aria-controls="collapseExample"
+  (click)="isCollapsed = !isCollapsed"
+>
+  {{ title }}
+</button>
+<div [class.hidden]="!isCollapsed" id="collapseExample"><ng-content></ng-content></div>
