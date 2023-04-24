@@ -12,15 +12,14 @@ import { Router } from '@angular/router';
 export class LoginComponent extends LoginForm {
   constructor(
     protected override fb: FormBuilder,
-    private readonly AuthService: AuthService,
+    private readonly authService: AuthService,
     private readonly router: Router
   ) {
     super(fb);
   }
 
   public loginSubmit(): void {
-    console.log(this.loginForm.value);
-    this.AuthService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
+    this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
       next: (token) => {
         if (token) localStorage.setItem('TOKEN', token);
 

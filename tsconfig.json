@@ -18,24 +18,13 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom",
-      "esnext.asynciterable"
-    ],
+    "lib": ["ES2022", "dom", "esnext.asynciterable"],
     "paths": {
-      "@app/*": [
-        "src/app/*"
-      ],
-      "@shared/*": [
-        "src/app/shared/*"
-      ],
-      "@modules/*": [
-        "src/app/modules/*"
-      ],
-      "@enviroment/*": [
-        "src/environments/*"
-      ]
+      "@app/*": ["src/app/*"],
+      "@graphql/*": ["src/app/core/graphql/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@modules/*": ["src/app/modules/*"],
+      "@enviroment/*": ["src/environments/*"]
     },
     "allowSyntheticDefaultImports": true
   },

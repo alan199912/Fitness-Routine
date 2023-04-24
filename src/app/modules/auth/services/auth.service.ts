@@ -1,16 +1,9 @@
 import { Injectable } from '@angular/core';
+import { GetIdByTokenResponse, LoginResponse, VerifyTokenResponse } from '@app/core/models/auth.models';
+import { Apollo } from 'apollo-angular';
 import { Observable, catchError, filter, map, throwError } from 'rxjs';
-import { Apollo, gql } from 'apollo-angular';
-
-const MUTATION_LOGIN = gql`
-  mutation ($email: String!, $password: String!) {
-    login(email: $email, password: $password)
-  }
-`;
-
-interface LoginResponse {
-  login: string;
-}
+import { MUTATION_LOGIN, MUTATION_REGISTER } from '@graphql/mutations/auth.mutations';
+import { QUERY_GET_ID_BY_TOKEN, QUERY_VERIFY_TOKEN } from '@graphql/queries/auth.queries';
 
 @Injectable({
   providedIn: 'root',
@@ -34,7 +27,35 @@ export class AuthService {
       );
   }
 
-  public isAuthenticated(): boolean {
-    return !!localStorage.getItem('TOKEN');
+  public isAuthenticated(): Observable<boolean> {
+    return this.apollo
+      .query<VerifyTokenResponse>({
+        query: QUERY_VERIFY_TOKEN,
+      })
+      .pipe(map((result) => result.data?.verifyToken));
+  }
+
+  public register(username: string, email: string, password: string) {
+    return this.apollo
+      .mutate({
+        mutation: MUTATION_REGISTER,
+        variables: {
+          username,
+          email,
+          password,
+        },
+      })
+      .pipe(catchError((error) => throwError(() => error.message)));
+  }
+
+  public getIdByToken(): Observable<string> {
+    return this.apollo
+      .query<GetIdByTokenResponse>({
+        query: QUERY_GET_ID_BY_TOKEN,
+      })
+      .pipe(
+        catchError((error) => throwError(() => error.message)),
+        map((result) => result.data?.getIdByToken)
+      );
   }
 }

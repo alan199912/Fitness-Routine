@@ -1,10 +1,15 @@
 <section id="register">
-  <form class="p-5 border rounded-lg w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] shadow-md">
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="registerSubmit()"
+    class="p-5 border rounded-lg w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] shadow-md"
+  >
     <div class="mb-6">
       <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
       <input
         type="email"
         id="email"
+        formControlName="email"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         placeholder="name@gmail.com"
         required
@@ -15,6 +20,7 @@
       <input
         type="text"
         id="username"
+        formControlName="username"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         placeholder="John123"
         required
@@ -25,21 +31,12 @@
       <input
         type="password"
         id="password"
+        formControlName="password"
         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         required
       />
     </div>
-    <div class="flex items-start justify-between mb-6">
-      <div class="flex items-center h-5">
-        <input
-          id="remember"
-          type="checkbox"
-          value=""
-          class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
-          required
-        />
-        <label for="remember" class="ml-2 text-sm font-medium text-gray-900">Remember me</label>
-      </div>
+    <div class="flex justify-end mb-6">
       <a
         [routerLink]="['/']"
         class="text-blue-700 hover:text-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm"
@@ -51,7 +48,7 @@
       type="submit"
       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
     >
-      Login
+      Register
     </button>
   </form>
 </section>

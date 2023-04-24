@@ -1,8 +1,8 @@
-import { NgModule, inject } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { AuthComponent } from './modules/auth/auth.component';
-import { AuthService } from './modules/auth/services/auth.service';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     loadChildren: () => import('./modules/dashboard/dashboard.module').then((m) => m.DashboardModule),
-    // canActivate: () => inject(AuthService).isAuthenticated(),
+    canLoad: [AuthGuard],
   },
 ];
 
