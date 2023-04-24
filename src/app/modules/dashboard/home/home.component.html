@@ -1,21 +1,31 @@
 <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
   <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
     <div class="flex flex-wrap justify-center space-x-2 mb-4">
-      <span
-        class="px-4 py-2 rounded-full border border-gray-300 text-gray-500 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease"
-      >
-        Monday
-      </span>
-      <span
-        class="px-4 py-2 rounded-full border border-gray-300 text-gray-500 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-blue-300 transition duration-300 ease"
-      >
-        Tuesday
-      </span>
-      <span
+      <ng-container *ngIf="user?.days.length !== 0; else noDays">
+        <span
+          *ngFor="let day of user?.days"
+          class="px-4 py-2 rounded-full border border-gray-300 text-gray-500 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease"
+        >
+          {{ day.name }}
+        </span>
+      </ng-container>
+
+      <ng-template #noDays>
+        <span
+          class="px-4 py-2 text-gray-500 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease"
+        >
+          There are no days, choose one!
+        </span>
+      </ng-template>
+      <button
+        type="button"
+        data-modal-target="days-modal"
+        data-modal-toggle="days-modal"
         class="px-4 py-2 rounded-full border border-green-300 text-green-500 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-green-500 active:border-green-500 transition duration-300 ease hover:bg-green-300 hover:text-white"
+        (click)="isOpenModal = !isOpenModal"
       >
         +
-      </span>
+      </button>
     </div>
     <!-- <app-collapse title="Monday"> -->
     <app-table></app-table>
@@ -28,5 +38,67 @@
         </a>
       </div> -->
     <!-- </app-collapse> -->
+  </div>
+</div>
+
+<div
+  id="days-modal"
+  tabindex="-1"
+  aria-hidden="true"
+  class="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+  [class.hidden]="!isOpenModal"
+  [class.block]="isOpenModal"
+>
+  <div class="relative w-full max-w-md max-h-full m-auto">
+    <!-- Modal content -->
+    <div class="relative bg-white rounded-lg shadow">
+      <button
+        type="button"
+        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+        data-modal-hide="days-modal"
+        (click)="isOpenModal = !isOpenModal"
+      >
+        <svg
+          aria-hidden="true"
+          class="w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        <span class="sr-only">Close modal</span>
+      </button>
+      <!-- Modal header -->
+      <div class="px-6 py-4 border-b rounded-t">
+        <h3 class="text-base font-semibold text-gray-900 lg:text-xl">Choose days</h3>
+      </div>
+      <!-- Modal body -->
+      <div class="p-6">
+        <p class="text-sm font-normal text-gray-500">Choose the days you want to train</p>
+        <ul class="my-4 space-y-3" *ngIf="daysUser">
+          <li *ngFor="let day of daysUser">
+            <a
+              class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow"
+              (click)="chooseDay(day.id)"
+            >
+              <span class="flex-1 ml-3 whitespace-nowrap">{{ day.name }}</span>
+              <span
+                *ngIf="day.checked"
+                class="inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
+                </svg>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>

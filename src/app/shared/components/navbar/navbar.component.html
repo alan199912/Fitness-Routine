@@ -112,8 +112,9 @@
             >
               <span class="sr-only">Open user menu</span>
               <img
+                *ngIf="user"
                 class="h-8 w-8 rounded-full"
-                src="https://api.dicebear.com/5.x/pixel-art/svg?seed=Alan"
+                [src]="['https://api.dicebear.com/5.x/pixel-art/svg?seed=' + user.username]"
                 alt=""
               />
             </button>
@@ -150,7 +151,7 @@
             >
 
             <a
-              [routerLink]="['/']"
+              (click)="logout()"
               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               role="menuitem"
               >Sign out</a
